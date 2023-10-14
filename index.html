@@ -5,7 +5,6 @@
     <meta http-equiv="X-AU-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
     <!-- main meta tags -->
     <title>Forecast Finesse</title>
     <meta name="title" content="Forecast Finesse">
@@ -17,8 +16,7 @@
     <!-- google font links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" 
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- css link -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -28,6 +26,44 @@
     <script src="./assets/js/route.js" type="module"></script>
 </head>
 <body>
-    
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="./assets/images/weatherapp-icon.png" alt="Forecast Finesse Weather App Logo">
+            </a>
+            <div class="search-view" data-search-view>
+                <div class="search-wrapper">
+                    <input type="search" name="search" placeholder="Search City" autocomplete="off" class="search-field" data-search-field>
+                    <span class="m-icon">search</span>
+                    <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+                        <span class="m-icon">arrow_back</span>
+                    </button>
+                </div>
+                <div class="search-result" data-search-result>
+                    <ul class="view-list" data-search-list>
+                        <li class="view-item">
+                            <span class="m-icon">location_on</span>
+                            <div>
+                                <p class="item-title">Melbourne</p>
+                                <p class="label-2 item-subtile">Victoria, Australia</p>
+                            </div>
+                            <a href="#" class="item-link has-state" data-search-toggler></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn has-state" aria-label="open search" data-search-toggler="">
+                    <span class="m-icon icon">search</span>
+                </button>
+                <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+                    <span class="m-icon">my_location</span>
+                    <span class="span">Current Location</span>
+                </a>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
