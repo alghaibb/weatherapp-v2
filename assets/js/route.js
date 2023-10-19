@@ -1,15 +1,15 @@
 'use strict';
 
 // Importing functions from app.js
-import {updateWeather, error404} from "./app.js";
+import { updateWeather, error404 } from "./app.js";
 
 // Default location coordinates for Melbourne
-const defaultLocation = "#weather?Lat=-37.840935&lon=-144.946457" // Lon & lat of Melbourne
+const defaultLocation = "#/weather?lat=-37.840935&lon=-144.946457" // Lon & lat of Melbourne
 
 // Function to get the current location coordinates
-const currentLocation = function() {
+const currentLocation = function () {
     window.navigator.geolocation.getCurrentPosition(res => {
-        const {latitude, longitude} = res.coords;
+        const { latitude, longitude } = res.coords;
 
         // Update weather based on current location
         updateWeather(`lat=${latitude}`, `lon=${longitude}`)
@@ -33,17 +33,17 @@ const routes = new Map([
 ]);
 
 // Function to check and handle hash changes
-const checkHash = function() {
+const checkHash = function () {
     const requestURL = window.location.hash.slice(1);
 
     const [route, query] = requestURL.includes ? requestURL.split("?") : [requestURL]
-                                                // Handle 404 errors
-    routes.get(route) ? route.get(route)(query) : error404();
+    // Handle 404 errors
+    routes.get(route) ? routes.get(route)(query) : error404();
 };
 
 // Event listeners for hash changes and initial page load
 window.addEventListener("hashchange", checkHash);
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     if (window.location.hash) {
         window.location.hash = "/current-location";
     } else {

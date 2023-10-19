@@ -1,7 +1,7 @@
 'use strict';
 
 // API key for OpenWeatherMap
-const apiKey = "595864bfef3aa4eab4181ee9b9f3e020"
+const api_key = "e5bffeeb5811d256c6f1079684738a77"
 
 /**
  * Fetch data from the server using the provided URL.
@@ -10,8 +10,8 @@ const apiKey = "595864bfef3aa4eab4181ee9b9f3e020"
  * @param {function} callback - A function to handle the fetched data.
  */
 
-export const fetchData = function(URL, callback) {
-    fetch(`${URL}&appid=${apiKey}`)
+export const fetchData = function (URL, callback) {
+    fetch(`${URL}&appid=${api_key}`)
         .then(res => res.json())
         .then(data => callback(data));
 }
@@ -30,7 +30,14 @@ export const url = {
     reverseGeoCode(lat, lon) {
         return `http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`
     },
+
+    /**
+     * Generates a URL for a geo-location query.
+     *
+     * @param {string} query - The location query, for e.g.: "Melbourne, VIC", "New York"
+     * @returns {string} The generated URL.
+     */
     geo(query) {
-        return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=`
+        return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`
     }
 }
