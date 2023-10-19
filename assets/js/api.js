@@ -1,8 +1,14 @@
 'use strict';
 
+// API key for OpenWeatherMap
 const apiKey = "595864bfef3aa4eab4181ee9b9f3e020"
 
-// fetch data from server
+/**
+ * Fetch data from the server using the provided URL.
+ *
+ * @param {string} URL - The API endpoint URL.
+ * @param {function} callback - A function to handle the fetched data.
+ */
 
 export const fetchData = function(URL, callback) {
     fetch(`${URL}&appid=${apiKey}`)
@@ -10,6 +16,7 @@ export const fetchData = function(URL, callback) {
         .then(data => callback(data));
 }
 
+// Object containing URL generation functions for OpenWeatherMap endpoints
 export const url = {
     currentWeather(lat, lon) {
         return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}5&units=metric`
