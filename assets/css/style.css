@@ -833,7 +833,7 @@ article.container::before {
   align-items: center;
 }
 
-.footer .footer-content {
+.footer {
   color: var(--on-surface-variant);
   text-align: center;
   gap: 12px 24px;
@@ -846,7 +846,7 @@ article.container::before {
 }
 
 .footer .body-3:last-child {
-  gap: 6px;
+  gap: 5px;
 }
 
 
