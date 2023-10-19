@@ -2,13 +2,13 @@
 
 // Array of week day names
 export const weekDayNames = [
-   "Sunday", 
-   "Monday", 
-   "Tuesday", 
-   "Wednesday", 
-   "Thursday", 
-   "Friday", 
-   "Saturday"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
 ];
 
 // Array of month names
@@ -34,12 +34,12 @@ export const monthNames = [
  * @returns {string} A formatted date string in the format: "Weekday Day, Month".
  */
 
-export const getDate = function(dateUnix, timezone) {
+export const getDate = function (dateUnix, timezone) {
     const date = new Date((dateUnix + timezone) * 1000);
-    const weekDayNames = weekDayNames[date.getUTCDay()];
-    const monthNames = monthNames[date.getUTCMonth()];
+    const weekDay = weekDayNames[date.getUTCDay()];
+    const month = monthNames[date.getUTCMonth()];
 
-    return `${weekDayNames} ${date.getUTCDate()}, ${monthNames}`;
+    return `${weekDay} ${date.getUTCDate()}, ${month}`;
 }
 
 /**
@@ -50,14 +50,14 @@ export const getDate = function(dateUnix, timezone) {
  * @returns {string} A formatted time string in the format: "HH:MM AM/PM".
  */
 
-export const getTime = function(timeUnix, timezone) {
-     // Create a Date object using the provided timestamp and timezone offset.
+export const getTime = function (timeUnix, timezone) {
+    // Create a Date object using the provided timestamp and timezone offset.
     const date = new Date((timeUnix + timezone) * 1000);
-    
+
     // Extract hours and minutes from the Date object.
     const hours = date.getUTCHours();
     const minutes = date.getUTCMinutes();
-    
+
     // Determine whether it's AM or PM based on the hour.
     const period = hours >= 12 ? "PM" : "AM";
 
@@ -73,18 +73,18 @@ export const getTime = function(timeUnix, timezone) {
  * @returns {string} A formatted time string in the format: "HH AM/PM".
  */
 
-export const getHours = function(timeUnix, timezone) {
+export const getHours = function (timeUnix, timezone) {
     // Create a Date object using the provided timestamp and timezone offset.
-   const date = new Date((timeUnix + timezone) * 1000);
-   
-   // Extract hours and minutes from the Date object.
-   const hours = date.getUTCHours();
-   
-   // Determine whether it's AM or PM based on the hour.
-   const period = hours >= 12 ? "PM" : "AM";
+    const date = new Date((timeUnix + timezone) * 1000);
 
-   // Format the time as "HH:MM AM/PM" and return it.
-   return `${hours % 12 || 12} ${period}`;
+    // Extract hours and minutes from the Date object.
+    const hours = date.getUTCHours();
+
+    // Determine whether it's AM or PM based on the hour.
+    const period = hours >= 12 ? "PM" : "AM";
+
+    // Format the time as "HH:MM AM/PM" and return it.
+    return `${hours % 12 || 12} ${period}`;
 };
 
 /**
