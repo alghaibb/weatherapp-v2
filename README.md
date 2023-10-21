@@ -1,4 +1,4 @@
-# Weather App Homework - Forecast Finess
+# Weather App Homework - Forecast Finesse
 
 A web application that allows users to check the current weather, air quality, and a 5-day forecast for any location. It also provides the option to get weather information for the user's current location.
 
@@ -57,6 +57,10 @@ To get started with the Weather App, follow these steps:
 The Weather App uses the following APIs:
 
 - [OpenWeatherMap](https://openweathermap.org/api) API for weather data.
+
+## Link to deployed site
+
+- [Forecast Finesse](https://alghaibb.github.io/weatherapp-v2/#/current-location)
 
 ## Contributing
 
