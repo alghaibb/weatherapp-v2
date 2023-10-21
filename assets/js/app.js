@@ -52,11 +52,14 @@ searchField.addEventListener("input", function () {
 
             // Fetch data based on the search field value and handle it in a callback function.
             fetchData(url.geo(searchField.value), function (locations) {
+                if (locations && locations.length > 0) {
+                    
+                }
                 searchField.classList.remove("searching");
                 searchResult.classList.add("active");
                 searchResult.innerHTML = `
-                <ul class="view-list" data-search-list></ul>
-                `; // Create an empty list for displaying search results.
+                    <ul class="view-list" data-search-list></ul>
+                `; 
 
                 const /** {NodeList} | [] */ items = [];
 
